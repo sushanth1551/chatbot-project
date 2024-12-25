@@ -108,10 +108,13 @@ import { Link } from "react-router-dom";  // Import Link from react-router-dom
 import Nav from "./Nav";
 import Footer from "./Footer";
 import "../css/Consultancy.css";
+// import { NotificationList } from "./NotificationList";
+import { useNavigate } from "react-router-dom";
 
 const PersonalAssistant = () => {
   const [currentTime, setCurrentTime] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const Navigate = useNavigate();
 
   useEffect(() => {
     // Update the current time every minute
@@ -151,7 +154,7 @@ const PersonalAssistant = () => {
               <p className="card-text">Send notifications to contacts based on time.</p>
               <button
                 className="btn btn-primary"
-                onClick={() => handleSendNotification("Mobile")}
+                onClick={() => Navigate("/notiapp") }
               >
                 Send to Mobile
               </button>
